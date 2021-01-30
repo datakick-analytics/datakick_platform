@@ -6,7 +6,6 @@ from bs4 import BeautifulSoup
 tokenizer = nltk.tokenize.toktok.ToktokTokenizer()
 
 
-# Strip HTML
 def strip_html_tags(text):
     soup = BeautifulSoup(text, "html.parser")
     stripped_text = soup.get_text()
@@ -14,21 +13,18 @@ def strip_html_tags(text):
     return stripped_text
 
 
-# Remove accented characters
 def remove_accented_chars(text):
     text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
     
     return text
 
 
-# Remove special characters
 def remove_special_characters(text):
     text = re.sub('[^a-zA-Z0-9\s]', '', text)
     
     return text
 
 
-# Remove stopwords
 def remove_stopwords(text):
     stopword_list = nltk.corpus.stopwords.words('english')
     
