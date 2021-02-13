@@ -38,7 +38,6 @@ def remove_stopwords(text):
     return filtered_text
 
 
-# Normalize text corpus
 def normalize_corpus(corpus, 
                      html_stripping=True, accented_char_removal=True, text_lower_case=True, 
                      special_char_removal=True, stopword_removal=True):
